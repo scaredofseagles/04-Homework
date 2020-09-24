@@ -1,0 +1,49 @@
+/* .container{
+    margin-left: auto;
+    margin-top: auto;
+    
+} */
+
+main {
+    font-family: 'Rubik', sans-serif;
+}
+
+#high-score{
+    color: #6f42c1;
+    position:absolute;
+    top:7px;
+    left:60px;
+}
+
+.box{
+    text-align: center;
+    width: 500px;
+    height: 300px;
+    display: block;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    position: relative;
+    top: 100px;
+}
+
+#time{
+    position:absolute;
+    top:7px;
+    right:60px;
+    
+}
+
+button{
+    background-color:#6f42c1 !important;
+    color: white !important;
+}  
+
+p{
+    padding: 15px;
+}
+
+#question-1{
+    display: none;
+}
