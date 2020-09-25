@@ -50,7 +50,7 @@ p{
     z-index: 2;
 }
 
-#question-1{
+.slide{
     opacity: 0;
     z-index: 1;
     position: absolute;
