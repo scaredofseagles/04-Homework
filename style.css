@@ -2,6 +2,7 @@
 
 main {
     font-family: 'Rubik', sans-serif !important ;
+    
 }
 
 #high-score{
@@ -15,7 +16,7 @@ main {
     text-align: center;
     width: 500px;
     height: 300px;
-
+    border: 2px solid red;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -41,29 +42,27 @@ button{
     margin-bottom: auto;
     margin-left: auto;
     position: relative;
-    top: 100px;
+
 }  
+
+#next, #previous, #submit{
+    opacity: 0;
+    z-index: 2;
+}
+aside{
+    position: relative;
+    align-content: center;
+}
 
 p{
     padding: 15px;
 }
 
-#welcome{
-    opacity: 1;
-    
-}
 
-form, #answer{
+form{
     text-align: left;
 }
 
-aside {
-    position: absolute;
-    bottom: 100px;
-    left: 36%;
-    opacity: 0;
-    color: #6f42c1;
-}
 
 .slide{
     z-index: 1;
@@ -73,6 +72,7 @@ aside {
 .active-slide{
     opacity: 1;
     z-index: 2;
+    position: absolute;
 }
   
   
