@@ -46,7 +46,7 @@ function showSlide(idx) {
         previousBtn.style.display = 'none';
         nextBtn.style.display = 'none';
         submitBtn.style.display = 'none';
-        //document.querySelector('#question-1').style.opacity = "0"
+        
         console.log(`current slide is ${currentSlide}`)
     }
     else{
@@ -67,10 +67,12 @@ function showSlide(idx) {
 
 function showNextSlide() {
 showSlide(currentSlide + 1);
+document.querySelector('#question-1').style.opacity = "0"
 }
 
 function showPreviousSlide() {
 showSlide(currentSlide - 1);
+if (currentSlide == 1) document.querySelector('#question-1').style.opacity = "1"
 }
 
 showSlide(currentSlide);

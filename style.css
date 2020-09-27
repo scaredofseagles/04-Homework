@@ -2,7 +2,7 @@
 
 main {
     font-family: 'Rubik', sans-serif !important ;
-    
+    height: 500px;
 }
 
 #high-score{
@@ -16,7 +16,7 @@ main {
     text-align: center;
     width: 500px;
     height: 300px;
-    border: 2px solid red;
+    
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -24,6 +24,7 @@ main {
     position: relative;
     top: 100px;
     transition: opacity 0.5s;
+    left: 25%;
 }
 
 
@@ -50,8 +51,9 @@ button{
     z-index: 2;
 }
 aside{
-    position: relative;
+    position: absolute;
     align-content: center;
+    bottom: 100px;
 }
 
 p{
@@ -68,11 +70,12 @@ form{
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s;
+    position: absolute;
 }
 .active-slide{
     opacity: 1;
     z-index: 2;
-    position: absolute;
+    
 }
   
   
