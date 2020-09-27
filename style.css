@@ -1,8 +1,4 @@
-/* .container{
-    margin-left: auto;
-    margin-top: auto;
-    
-} */
+
 
 main {
     font-family: 'Rubik', sans-serif !important ;
@@ -29,6 +25,7 @@ main {
     transition: opacity 0.5s;
 }
 
+
 #time{
     position:absolute;
     top:7px;
@@ -39,6 +36,12 @@ main {
 button{
     background-color:#6f42c1 !important;
     color: white !important;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    position: relative;
+    top: 100px;
 }  
 
 p{
@@ -47,37 +50,29 @@ p{
 
 #welcome{
     opacity: 1;
-    z-index: 2;
+    
 }
 
-.slide{
-    opacity: 0;
-    z-index: 1;
-    position: absolute;
-    left: 25%;
-}
-
-article, #answer{
+form, #answer{
     text-align: left;
 }
 
-/* .slide{
+aside {
     position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
+    bottom: 100px;
+    left: 36%;
+    opacity: 0;
+    color: #6f42c1;
+}
+
+.slide{
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s;
-  }
+}
 .active-slide{
     opacity: 1;
     z-index: 2;
-  }
+}
   
-.quiz-container{
-    position: relative;
-    height: 200px;
-    margin-top: 40px;
-  } */
   
