@@ -1,14 +1,9 @@
-// create button for highscores
 
-// create a timer
-
-// initialize buttons
 
 const startBtn = document.getElementById('start')
 startBtn.addEventListener('click', startQuiz)
 
-// Code from https://www.sitepoint.com/simple-javascript-quiz/
-// Pagination
+
 const previousBtn = document.getElementById("previous");
 const nextBtn = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
@@ -105,7 +100,6 @@ function endQuiz(){
     }
 
     var endSlide =  document.querySelector('#end')
-    //document.querySelector('#question-5').classList.remove('active-slide')
     endSlide.classList.add('active-slide')
 
     
@@ -153,5 +147,3 @@ $('#high-score').on('click', function(){
     console.log("pulling high scores")
     //document.querySelector('')
 })
-
-//showSlide(currentSlide);
