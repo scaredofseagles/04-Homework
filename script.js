@@ -14,8 +14,10 @@ const nextBtn = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 const submitBtn = document.getElementById("submit");
 const optBtn = document.querySelectorAll('.option-btn')
+var timeEl = document.getElementById('time')
 let currentSlide = 0;
 let score = 0
+var timeLeft = 60
 
 previousBtn.addEventListener('click', showPreviousSlide)
 nextBtn.addEventListener('click', showNextSlide)
@@ -32,6 +34,22 @@ function startQuiz(){
     submitBtn.style.opacity = '1'
     
     showSlide(currentSlide);
+    setTime()
+}
+
+function setTime(){
+    console.log("counting down ...")
+
+    var timerInterval = setInterval(function(){
+        timeLeft--;
+        timeEl.textContent = "Time: " + timeLeft
+        if (timeLeft == 0) {
+            clearInterval(timerInterval)
+            endQuiz();
+        }
+
+    }, 1000); 
+    
 }
 
 function showSlide(idx) {
@@ -72,11 +90,15 @@ function showPreviousSlide() {
 }
 
 function storeScores(){
-
+    console.log("[storeScores] has been reached ...")
+    var user = document.getElementById('userInitials').value
+    localStorage.setItem(user, score)
 }
 
-$('#submit').on('click', function(){
-    
+$('#submit').on('click', endQuiz)
+
+function endQuiz(){
+
     var endSlide =  document.querySelector('#end')
     document.querySelector('#question-5').classList.remove('active-slide')
     endSlide.classList.add('active-slide')
@@ -91,9 +113,7 @@ $('#submit').on('click', function(){
     
 
     //stop timer
-})
-
-$('#add-user').on('click', storeScores)
+}
 
 $('.option-btn').on('click', function(event){
     
@@ -115,6 +135,14 @@ $('.option-btn').on('click', function(event){
         // remove 5 secs from timer
     }
     console.log(score)
+})
+
+$('#add-user').on('click', storeScores)
+
+$('#high-score').on('click', function(){
+    localStorage.getItem(user, score)
+    console.log("pulling high scores")
+    //document.querySelector('')
 })
 
 //showSlide(currentSlide);
