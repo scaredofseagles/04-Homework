@@ -46,6 +46,8 @@ function setTime(){
         if (timeLeft == 0) {
             clearInterval(timerInterval)
             endQuiz();
+        }else if (document.getElementById('end').classList.contains('active-slide')){
+            clearInterval(timerInterval)
         }
 
     }, 1000); 
@@ -98,11 +100,15 @@ function storeScores(){
 $('#submit').on('click', endQuiz)
 
 function endQuiz(){
+    for (let i=0; i<slides.length; i++){
+        slides[i].classList.remove('active-slide');
+    }
 
     var endSlide =  document.querySelector('#end')
-    document.querySelector('#question-5').classList.remove('active-slide')
+    //document.querySelector('#question-5').classList.remove('active-slide')
     endSlide.classList.add('active-slide')
 
+    
     endSlide.children[0].textContent += score
 
     endSlide.innerHTML += `<button id="add-user" class="btn" type="button">Add</button>`
@@ -113,6 +119,7 @@ function endQuiz(){
     
 
     //stop timer
+    clearInterval(timerInterval)
 }
 
 $('.option-btn').on('click', function(event){
@@ -132,7 +139,9 @@ $('.option-btn').on('click', function(event){
     } else {
         ansStatus.style.color = "red"
         ansStatus.textContent = "Wrong!"
+        
         // remove 5 secs from timer
+        timeLeft -= 5
     }
     console.log(score)
 })
