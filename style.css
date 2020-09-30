@@ -35,6 +35,10 @@ main {
     
 }
 
+button:hover{
+    background-color: #573499 !important;
+}
+
 button{
     background-color:#6f42c1 !important;
     color: white !important;
@@ -44,7 +48,13 @@ button{
     margin-left: auto;
     position: relative;
 
-}  
+}
+
+.btn-grid{
+    display: grid;
+    grid-template-columns:  repeat(2, auto);
+    gap: 10px;
+}
 
 #next, #previous, #submit{
     opacity: 0;
@@ -54,6 +64,7 @@ aside{
     position: absolute;
     align-content: center;
     bottom: 100px;
+    width: 100%;
 }
 
 p{
@@ -61,21 +72,28 @@ p{
 }
 
 
-form{
+article, form{
     text-align: left;
 }
 
 
 .slide{
     z-index: 1;
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
     transition: opacity 0.5s;
     position: absolute;
 }
 .active-slide{
-    opacity: 1;
+    /* opacity: 1; */
     z-index: 2;
+    display: inline
     
 }
-  
+
+.answer-status{
+    position: absolute;;
+    right: 15%;
+    bottom: 18%;
+}
   

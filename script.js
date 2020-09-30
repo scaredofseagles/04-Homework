@@ -4,7 +4,6 @@
 
 // initialize buttons
 
-
 const startBtn = document.getElementById('start')
 startBtn.addEventListener('click', startQuiz)
 
@@ -15,6 +14,7 @@ const nextBtn = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 const submitBtn = document.getElementById("submit");
 let currentSlide = 0;
+let score = 0
 
 previousBtn.addEventListener('click', showPreviousSlide)
 nextBtn.addEventListener('click', showNextSlide)
@@ -23,18 +23,15 @@ nextBtn.addEventListener('click', showNextSlide)
 function startQuiz(){
     console.log( `[startQuiz] initialized` )
     
-    var hideSlide = document.querySelector('#welcome')
-    hideSlide.style.opacity = "0"
-    var showSlide = document.querySelector('#question-1')
-    showSlide.style.opacity = "1"
+    document.getElementById('welcome').classList.remove('active-slide')
+    currentSlide += 1
     
     previousBtn.style.opacity = '1'
     nextBtn.style.opacity = '1'
     submitBtn.style.opacity = '1'
     
-    //showSlide(currentSlide);
+    showSlide(currentSlide);
 }
-
 
 function showSlide(idx) {
     console.log(`[showSlide] reached ... ${currentSlide}`)
@@ -43,9 +40,6 @@ function showSlide(idx) {
     currentSlide = idx;
 
     if(currentSlide == 0){  
-        previousBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
-        submitBtn.style.display = 'none';
         
         console.log(`current slide is ${currentSlide}`)
     }
@@ -66,13 +60,51 @@ function showSlide(idx) {
 
 
 function showNextSlide() {
-showSlide(currentSlide + 1);
-document.querySelector('#question-1').style.opacity = "0"
+    showSlide(currentSlide + 1);
 }
 
 function showPreviousSlide() {
-showSlide(currentSlide - 1);
-if (currentSlide == 1) document.querySelector('#question-1').style.opacity = "1"
+    showSlide(currentSlide - 1);
 }
 
-showSlide(currentSlide);
+function storeScores(){
+    
+}
+
+$('#submit').on('click', function(){
+    
+    var endSlide =  document.querySelector('#end')
+    document.querySelector('#question-5').classList.remove('active-slide')
+    endSlide.classList.add('active-slide')
+
+    endSlide.children[0].textContent += score
+
+    endSlide.innerHTML += `<button id="add-user" class="btn" type="button">Add</button>`
+
+    previousBtn.style.opacity = '0'
+    nextBtn.style.opacity = '0'
+    submitBtn.style.opacity = '0'
+    
+
+    //stop timer
+})
+
+$('#add-user').on('click', storeScores)
+
+$('.option-btn').on('click', function(event){
+   
+    var checkStatus = event.target.classList
+    var ansStatus = document.querySelector('.answer-status')
+    if ( checkStatus.contains('correct') ) {
+        score += 1
+        ansStatus.style.color = "green"
+        ansStatus.textContent = "Correct!"
+    } else {
+        ansStatus.style.color = "red"
+        ansStatus.textContent = "Wrong!"
+        // remove 5 secs from timer
+    }
+    console.log(score)
+})
+
+//showSlide(currentSlide);
