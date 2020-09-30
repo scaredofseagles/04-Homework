@@ -2,7 +2,7 @@
 
 ## Description
 
-A short quiz to test the user's coding konwledge. The user will have 60 seconds to answer all questions, and will lose 5 seconds for every wrong answer. Once finished, the score will be aggregated and the user will have the option to save their highscore.
+A short quiz to test the user's coding knowledge. The user will have 60 seconds to answer all questions, and will lose 5 seconds for every wrong answer. Once finished, the score will be aggregated and the user will have the option to save their highscore.
 
 ## Technologies
 
