@@ -13,6 +13,7 @@ const previousBtn = document.getElementById("previous");
 const nextBtn = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 const submitBtn = document.getElementById("submit");
+const optBtn = document.querySelectorAll('.option-btn')
 let currentSlide = 0;
 let score = 0
 
@@ -61,6 +62,9 @@ function showSlide(idx) {
 
 function showNextSlide() {
     showSlide(currentSlide + 1);
+    for (let i=0; i<optBtn.length; i++){
+        optBtn[i].removeAttribute("disabled", "")
+    }
 }
 
 function showPreviousSlide() {
@@ -68,7 +72,7 @@ function showPreviousSlide() {
 }
 
 function storeScores(){
-    
+
 }
 
 $('#submit').on('click', function(){
@@ -92,13 +96,19 @@ $('#submit').on('click', function(){
 $('#add-user').on('click', storeScores)
 
 $('.option-btn').on('click', function(event){
-   
+    
+    for (let i=0; i<optBtn.length; i++){
+        optBtn[i].setAttribute("disabled", "")
+    }
+
+    
     var checkStatus = event.target.classList
     var ansStatus = document.querySelector('.answer-status')
     if ( checkStatus.contains('correct') ) {
         score += 1
         ansStatus.style.color = "green"
         ansStatus.textContent = "Correct!"
+        
     } else {
         ansStatus.style.color = "red"
         ansStatus.textContent = "Wrong!"
