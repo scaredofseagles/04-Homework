@@ -118,7 +118,7 @@ function endQuiz(){
 
 ## URL
 
-See the web application [here](https://scaredofseagles.github.io/04-Homework/)
+See the web application [here](https://scaredofseagles.github.io/Code-Quiz/)
 
 ## Source
 
